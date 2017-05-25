@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title></title>
+</head>
+<style>
+	.is-loading { background: white; }
+</style>
+<body>
+	
+	<div id="root">
+		<button 
+		@click="click"
+			:class="{ 'is-loading': isLoading }"
+			:disabled="isDisabled"
+			v-text="buttonText"
+		></button>
+	</div>
+
+	<script src="https://unpkg.com/vue"></script>
+	
+	<script>
+		var app = new Vue({
+			el: '#root',
+			
+			data: {
+				isLoading: false,
+				isDisabled: false,
+				buttonText: 'Click Me'
+			},
+
+			methods: {
+				click() {
+					this.isLoading = !this.isLoading;
+					this.isDisabled = !this.isDisabled;
+					this.buttonText = 'Loading...';
+				}
+			}
+		});
+	</script>
+
+</body>
+</html>

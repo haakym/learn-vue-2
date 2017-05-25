@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title></title>
+	<style>
+		ul.all_tasks li {
+			list-style: none;
+		}
+	</style>
+</head>
+<body>
+	
+	<div id="root">
+		<h1>All tasks</h1>
+		
+		<ul class="all_tasks">
+			<li v-for="(task, index) in tasks">
+				<input type="checkbox" :checked="task.completed" @click="toggle(index)">
+				{{ task.description }}
+			</li>
+		</ul>
+
+		<h1>Incomplete tasks</h1>
+			<li v-for="task in incompleteTasks" v-text="task.description"></li>
+
+		<ul>
+		</ul>
+	</div>
+
+	<script src="https://unpkg.com/vue"></script>
+	
+	<script>
+		var app = new Vue({
+			el: '#root',
+			
+			data: {
+				tasks: [
+					{ description: 'Go shoping', completed: true },
+					{ description: 'Buy Ethereum', completed: true },
+					{ description: 'Cook dinner', completed: false },
+					{ description: 'Learn composability', completed: false }
+				]
+			},
+
+			computed: {
+				incompleteTasks() {
+					return this.tasks.filter(task => !task.completed)
+				}
+			},
+
+			methods: {
+				toggle(index) {
+					this.tasks[index].completed = !this.tasks[index].completed;
+				}
+			}
+		});
+	</script>
+
+</body>
+</html>
