@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.1/css/bulma.css">
+	<style>
+		body {
+			padding-top: 40px;
+		}
+
+		.v-cloak {
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	
+	<div id="root" class="container">
+
+		<modal>
+			<template slot="header">My Title</template>
+			Here is the main content
+			<template slot="footer">
+				<a class="button is-success">Save changes</a>
+				<a class="button">Cancel</a>
+			</template>
+		</modal>
+
+	</div>
+
+	<script src="https://unpkg.com/vue"></script>
+	<script src="main.js"></script>
+
+</body>
+</html>
