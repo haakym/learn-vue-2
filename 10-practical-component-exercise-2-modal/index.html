@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.1/css/bulma.css">
+	<style>
+		body {
+			padding-top: 40px;
+		}
+
+		.v-cloak {
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	
+	<div id="root" class="container">
+
+		<modal v-if="showModal" @close="showModal = false" v-cloak>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolorem a ad reprehenderit assumenda, provident numquam aspernatur minima rerum iusto molestiae alias necessitatibus, quisquam dolorum tenetur beatae dicta non doloremque!
+			</p>
+		</modal>
+
+		<button @click="showModal = true">Show Modal</button>
+
+		
+	</div>
+
+	<script src="https://unpkg.com/vue"></script>
+	<script src="main.js"></script>
+
+</body>
+</html>
